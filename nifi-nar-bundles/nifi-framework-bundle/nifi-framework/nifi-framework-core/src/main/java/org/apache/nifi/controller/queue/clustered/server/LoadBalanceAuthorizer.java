@@ -17,8 +17,8 @@
 
 package org.apache.nifi.controller.queue.clustered.server;
 
-import java.util.Collection;
+import javax.net.ssl.SSLSession;
 
 public interface LoadBalanceAuthorizer {
-    void authorize(Collection<String> clientIdentities) throws NotAuthorizedException;
+    void authorize(SSLSession sslSession) throws NotAuthorizedException;
 }

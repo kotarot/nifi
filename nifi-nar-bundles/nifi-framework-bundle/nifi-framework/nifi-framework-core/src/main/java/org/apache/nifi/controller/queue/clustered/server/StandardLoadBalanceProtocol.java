@@ -140,7 +140,7 @@ public class StandardLoadBalanceProtocol implements LoadBalanceProtocol {
             logger.debug("Connection received from peer {}. Will perform authorization against Client Identities '{}'",
                 peerDescription, certIdentities);
 
-            authorizer.authorize(certIdentities);
+            authorizer.authorize(sslSession);
             logger.debug("Client Identities {} are authorized to load balance data", certIdentities);
         }
 
